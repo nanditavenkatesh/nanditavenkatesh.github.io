@@ -9,40 +9,45 @@ section {
 body {
     font-family: 'Arial', sans-serif;
     scroll-behavior: smooth;
+    color: #362E17; /* Update text color to dark brown */
 }
 
+/* General Navbar Styling */
 .navbar {
-    background-color: #333;
+    background-color: #000000;  /* Black color for navbar */
+    position: fixed;            /* Fix navbar to the top of the viewport */
+    top: -80px;                 /* Initial state: Hidden above the viewport */
+    width: 100%;                /* Make sure navbar takes full width */
+    transition: top 0.5s ease-in-out; /* Smooth transition for sliding down */
+    z-index: 1000;              /* Keep navbar above other content */
 }
 
-/* Initial state of the navbar - hidden */
-.navbar {
-    background-color: #2F2F2F;  /* Black color for navbar */
-    transition: top 0.5s;
-    top: -80px; /* Hide the navbar */
-}
-
-/* Navbar visible */
+/* Navbar becomes visible on scroll */
 .navbar-visible {
-    top: 0; /* Show the navbar */
+    top: 0; /* When visible, the navbar slides into view */
 }
 
+/* Navbar Brand Styling */
 .navbar-brand {
     font-weight: bold;
     font-size: 24px;
 }
 
+/* Navbar Link Styling */
 .nav-link {
-    color: white;
+    color: #FFFFFF;  /* White for links and brand text */
 }
 
 .nav-link:hover {
-    color: #f0f0f0;
+    color: #F6F3EA;  /* Cream color for link hover effect */
 }
+
 
 .home-section {
     position: relative;
     height: 100vh;
+    background-color: #FFFFFF
+    color: #362E17;  /* Color for text over the cover photo */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,14 +61,46 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('../images/sidebar-img.jpg') no-repeat center top/cover; /* Changed center to top */
+    background-color: #FFFFFF
     opacity: 0.5; /* Adjust opacity for translucency */
     z-index: -1; /* Send it behind the content */
 }
 
+.home-section .container {
+    position: relative;
+    z-index: 2;  /* Keep the text above the overlay */
+    color: #362E17;  /* Set text color for good contrast with the background */
+}
+
+/* Button Styling for Better Visibility */
+.home-section .btn {
+    margin-top: 20px;
+    background-color: #000000;  /* Black button */
+    border: none;
+    color: #FFFFFF;  /* White text */
+    transition: background-color 0.3s;
+}
+
+.home-section .btn:hover {
+    background-color: #362E17;  /* Change button color to brown on hover */
+    color: #FFFFFF;  /* White text */
+}
 
 .footer {
+    background-color: #FFFFFF;  /* Brown background */
+    color: #362E17;  /* White text */
     padding: 20px 0;
+    text-align: center;
+}
+
+/* Optional: Styling for Links in the Footer */
+.footer a {
+    color: #362E17;  /* Brown text for links */
+    text-decoration: none;  /* Remove underline */
+}
+
+.footer a:hover {
+    text-decoration: underline;  /* Underline on hover for better UX */
 }
 
 /* Responsive Styling */
@@ -89,25 +126,52 @@ body {
 
 /* About Section */
 .about-section {
-    background-color: #f9f9f9;
+    background-color: #362E17;
+    color: #362E17;  /* Dark brown for text */
     padding: 60px 0;
 }
 
 .about-section h2 {
     font-weight: bold;
     margin-bottom: 20px;
+    color: #FFFFFF;  /* White text for headings */
 }
 
 .about-section p {
     font-size: 1.1em;
     line-height: 1.6em;
+    color: #FFFFFF;  /* White text for paragraphs */
 }
 
+/* Justify the text in the About section */
+.about-content p {
+    text-align: left;
+}
 
+/* Adjust margins for better spacing */
+.about-content {
+    margin: 0 auto; /* Center align within the row */
+    padding: 20px;
+}
+
+.about-section .btn {
+    margin-top: 20px;
+    background-color: #000000;  /* Black button */
+    color: #FFFFFF;  /* White text */
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.about-section .btn:hover {
+    background-color: #FFFFFF;  /* Change button color to white on hover */
+    color: #362E17;  /* Brown text on hover */
+}
 /* Projects Section */
 .projects-section {
     padding: 60px 0;
-    background-color: #fff;
+    background-color: #F6F3EA;
+    color: #362E17;  /* Dark brown for text */
+    scroll-margin-top: 100px;  /* Adjust this to the height of your navbar */
 }
 
 .projects-section h2 {
@@ -138,7 +202,8 @@ body {
 
 /* Skills Section */
 .skills-section {
-    background-color: #f9f9f9;
+    background-color: #F6F3EA;
+    color: #362E17;  /* Dark brown for text */
     padding: 60px 0;
 }
 
@@ -161,7 +226,8 @@ body {
 
 /* Contact Section Styling */
 .contact-section {
-    background-color: #f9f9f9;
+    background-color: #CFCDC7;  /* Light tan background */
+    color: #362E17;  /* Dark brown for text */
     padding: 60px 0;
 }
 
@@ -178,19 +244,20 @@ body {
 
 .contact-icon {
     font-size: 2.5em;  /* Increases icon size */
-    color: #007bff;
+     color: #000000;  /* Black for icons */
     transition: transform 0.3s, color 0.3s;
 }
 
 .contact-icon:hover {
-    color: #0056b3;  /* Darkens the color on hover */
+    color: #362E17;  /* Darkens the color on hover */
     transform: scale(1.2);  /* Enlarges the icon slightly on hover */
 }
 
 
 /* Timeline Section */
 .timeline-section {
-    background-color: #f9f9f9;
+    background-color: #000000;  /* Black background */
+    color: #FFFFFF;  /* White text for readability */
     padding: 60px 0;
 }
 
@@ -204,7 +271,7 @@ body {
     content: '';
     position: absolute;
     width: 4px;
-    background-color: #007bff;
+    background-color: #F6F3EA;  /* Cream line for visibility */
     top: 0;
     bottom: 0;
     left: 50%;
@@ -232,11 +299,11 @@ body {
 .timeline-date {
     font-weight: bold;
     margin-bottom: 10px;
-    color: #007bff;
+    color: #F6F3EA;  /* Cream for timeline dates */
 }
 
 .timeline-content {
-    background-color: #fff;
+    background-color: #CFCDC7;  /* Light tan for content blocks */
     padding: 15px 25px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -246,7 +313,7 @@ body {
     position: absolute;
     width: 16px;
     height: 16px;
-    background-color: #007bff;
+    background-color: #F6F3EA;  /* Cream color for dots */
     border-radius: 50%;
     top: 20px;
     left: 50%;
@@ -268,4 +335,12 @@ body {
     .timeline-dot {
         left: 30px;
     }
+}
+
+/* Divider Styling */
+.custom-divider {
+    height: 3px; /* Thickness of the divider */
+    background-color: #000000; /* Black color for divider */
+    width: 100%; /* Full width */
+    margin: 0;   /* Remove margin to ensure no additional spacing */
 }

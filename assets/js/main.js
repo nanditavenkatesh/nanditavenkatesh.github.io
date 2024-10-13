@@ -4,15 +4,25 @@ AOS.init({
 });
 
 // Smooth Scrolling
-document.querySelectorAll('.nav-link').forEach(anchor => {
+document.querySelectorAll('.nav-link, .btn').forEach(anchor => {
     anchor.addEventListener('click', function(event) {
         event.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
-        document.getElementById(targetId).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const buffer = 20;  // Additional buffer to prevent overlap
+            const targetPosition = targetElement.offsetTop - navbarHeight - buffer;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
     });
 });
+
 
 // Highlight Active Navigation Link
 window.addEventListener('scroll', () => {
@@ -30,16 +40,38 @@ window.addEventListener('scroll', () => {
     });
 });
 
+//
+//document.addEventListener('scroll', function() {
+//    const navbar = document.querySelector('.navbar');
+//    const scrollPosition = window.scrollY;
+//
+//    if (scrollPosition > 100) {
+//        // If scrolled away from top, show the navbar
+//        navbar.classList.add('navbar-visible');
+//    } else {
+//        // If at the top, hide the navbar
+//        navbar.classList.remove('navbar-visible');
+//    }
+//});
 
-document.addEventListener('scroll', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
-    const scrollPosition = window.scrollY;
 
-    if (scrollPosition > 100) {
-        // If scrolled away from top, show the navbar
-        navbar.classList.add('navbar-visible');
-    } else {
-        // If at the top, hide the navbar
-        navbar.classList.remove('navbar-visible');
-    }
+    // Initially hide the navbar
+    navbar.classList.add('navbar-hidden');
+
+    // Add scroll event listener
+    document.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition > 100) {
+            // If scrolled down more than 100px, show the navbar
+            navbar.classList.remove('navbar-hidden');
+            navbar.classList.add('navbar-visible');
+        } else {
+            // If at the top, hide the navbar
+            navbar.classList.remove('navbar-visible');
+            navbar.classList.add('navbar-hidden');
+        }
+    });
 });
