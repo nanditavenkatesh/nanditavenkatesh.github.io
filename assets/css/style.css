@@ -31,10 +31,21 @@
 }
 
 /* Buttons with Gradient Background */
-.home-section .btn, .about-section .btn {
+.home-section .btn {
     background: linear-gradient(135deg, #362e17, #5c524a); /* Gradient for buttons */
     border: none;
     color: #ffffff;
+    transition: background 0.3s, transform 0.3s ease-in-out; /* Smooth transition for hover */
+    margin: 20px auto; /* Center the button and add spacing on smaller screens */
+    display: block; /* Ensure it remains centered */
+}
+
+
+/* Buttons with Gradient Background */
+.about-section .btn {
+    background: linear-gradient(135deg, #CFCDC7, #FFFFFF); /* Gradient for buttons */
+    border: none;
+    color: #000000;
     transition: background 0.3s, transform 0.3s ease-in-out; /* Smooth transition for hover */
     margin: 20px auto; /* Center the button and add spacing on smaller screens */
     display: block; /* Ensure it remains centered */
@@ -53,8 +64,13 @@ p {
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.home-section .btn:hover, .about-section .btn:hover {
+.home-section .btn:hover{
     background-color: #5c524a; /* Darker color for hover effect */
+    transform: scale(1.1) rotate(2deg); /* Add a slight rotation effect to buttons on hover */
+}
+
+ .about-section .btn:hover {
+    background-color: #000000; /* Darker color for hover effect */
     transform: scale(1.1) rotate(2deg); /* Add a slight rotation effect to buttons on hover */
 }
 
@@ -93,6 +109,22 @@ body {
     scroll-behavior: smooth;
     color: #362E17; /* Update text color to dark brown */
 }
+/* Navbar Logo Styling */
+.navbar-logo {
+    height: 40px;  /* Adjust height according to the desired size */
+    width: 40px;   /* Set width equal to height to ensure it's a perfect circle */
+    border-radius: 50%;  /* Make the image round */
+    object-fit: cover;  /* Ensure the image scales correctly inside the circle */
+    max-width: 100%;  /* Prevent it from getting too large */
+}
+
+/* Container adjustment to align logo on the left */
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 
 /* General Navbar Styling */
 .navbar {
@@ -324,8 +356,8 @@ p {
 /* Button Styling for Interactivity */
 .about-section .btn {
     margin-top: 20px;
-    background-color: #000000;  /* Black button */
-    color: #FFFFFF;  /* White text */
+    background-color: #FFFFFF;  /* Black button */
+    color: #362E17;  /* White text */
     padding: 10px 20px; /* Proper padding for rounded buttons */
     border-radius: 30px; /* Rounded buttons */
     border: none;
@@ -335,7 +367,7 @@ p {
 
 .about-section .btn:hover {
     background-color: #FFFFFF;  /* Change button color to white on hover */
-    color: #362E17;  /* Brown text on hover */
+    color: #000000;  /* Brown text on hover */
     transform: scale(1.05); /* Slight scale effect on hover */
 }
 
@@ -465,7 +497,7 @@ p {
     font-family: 'Roboto', sans-serif; /* Use Roboto for card text */
     font-size: 1em; /* Maintain readability */
     line-height: 1.6; /* Improve line height for readability */
-    color: #362E17; /* Mocha text for consistency */
+    color: #000000; /* Mocha text for consistency */
 }
 
 /* Card Container Layout */
@@ -509,6 +541,12 @@ p {
     transform: translateX(-50%);
 }
 
+/* Font Styling for Headings and Paragraphs in Time Line Sections */
+.timeline-section h1, h2, h5 {
+    font-family: 'Playfair Display', serif; /* Use Playfair Display for headings */
+    font-weight: 700;
+    color: #FFFFFF; /* White for headings */
+}
 /* Timeline Item Styling */
 .timeline-item {
     position: relative;
