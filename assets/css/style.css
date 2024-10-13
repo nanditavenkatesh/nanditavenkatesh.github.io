@@ -1,0 +1,271 @@
+/* style.css */
+/* Add padding to offset the fixed navbar */
+section {
+    padding-top: 100px;  /* Adjust this value to be slightly greater than the navbar height */
+    scroll-margin-top: 100px;  /* Helps with smooth scrolling alignment */
+}
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    background-color: #333;
+}
+
+/* Initial state of the navbar - hidden */
+.navbar {
+    background-color: #2F2F2F;  /* Black color for navbar */
+    transition: top 0.5s;
+    top: -80px; /* Hide the navbar */
+}
+
+/* Navbar visible */
+.navbar-visible {
+    top: 0; /* Show the navbar */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: #f0f0f0;
+}
+
+.home-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.home-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/sidebar-img.jpg') no-repeat center top/cover; /* Changed center to top */
+    opacity: 0.5; /* Adjust opacity for translucency */
+    z-index: -1; /* Send it behind the content */
+}
+
+
+.footer {
+    padding: 20px 0;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .home-section {
+        text-align: center;
+        padding: 20px;
+    }
+}
+
+/* Shadowed Image with Rounded Corners */
+.shadow-img {
+    width: 100%;  /* Keeps the image responsive */
+    max-width: 400px;  /* Restricts the maximum size */
+    border-radius: 15px;  /* Rounds the corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);  /* Adds a shadow for depth */
+    transition: transform 0.3s;  /* Smooth hover effect */
+}
+
+.shadow-img:hover {
+    transform: scale(1.05);  /* Zooms in slightly on hover */
+}
+
+/* About Section */
+.about-section {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+}
+
+.about-section h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 1.1em;
+    line-height: 1.6em;
+}
+
+
+/* Projects Section */
+.projects-section {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.projects-section h2 {
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 10px;
+}
+
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+
+/* Skills Section */
+.skills-section {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+}
+
+.skills-section h2 {
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.skills-section ul {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 1.1em;
+}
+
+.skills-section h5 {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+
+/* Contact Section Styling */
+.contact-section {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+}
+
+.contact-section h2 {
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;  /* Adds space between each icon */
+}
+
+.contact-icon {
+    font-size: 2.5em;  /* Increases icon size */
+    color: #007bff;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.contact-icon:hover {
+    color: #0056b3;  /* Darkens the color on hover */
+    transform: scale(1.2);  /* Enlarges the icon slightly on hover */
+}
+
+
+/* Timeline Section */
+.timeline-section {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #007bff;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    margin: 20px 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: left;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: right;
+}
+
+.timeline-date {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.timeline-content {
+    background-color: #fff;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #007bff;
+    border-radius: 50%;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+    .timeline-item {
+        width: 100%;
+        left: 0;
+        padding-left: 50px;
+        padding-right: 15px;
+    }
+
+    .timeline::before {
+        left: 30px;
+    }
+
+    .timeline-dot {
+        left: 30px;
+    }
+}
