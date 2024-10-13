@@ -1,4 +1,74 @@
-/* style.css */
+/* Suggested Visual Improvements */
+
+/* Enhance Colors: Add subtle gradients to break monotony */
+.home-section {
+    background: linear-gradient(135deg, #ffffff, #f6f3ea); /* Subtle gradient for the home section */
+}
+
+.about-section {
+    background: linear-gradient(135deg, #362e17, #5c524a); /* Darker gradient for a rich effect in the about section */
+    color: #ffffff; /* Ensure text is readable against the gradient */
+}
+
+.timeline-section {
+    background: linear-gradient(135deg, #000000, #362e17); /* A gradient for timeline section to give depth */
+    color: #ffffff;
+}
+
+/* Buttons with Gradient Background */
+.home-section .btn, .about-section .btn {
+    background: linear-gradient(135deg, #362e17, #5c524a); /* Gradient for buttons */
+    border: none;
+    color: #ffffff;
+    transition: background 0.3s, transform 0.3s ease-in-out; /* Smooth transition for hover */
+}
+
+.home-section .btn:hover, .about-section .btn:hover {
+    background: linear-gradient(135deg, #5c524a, #362e17); /* Inverse gradient on hover */
+    transform: scale(1.05); /* Slight scaling effect for interactivity */
+}
+
+/* Typography Adjustments */
+p {
+    font-size: 1.4rem; /* Increase paragraph text size for readability */
+    line-height: 1.8; /* Ensure adequate spacing between lines */
+    color: #362e17; /* Keep dark brown color for consistency */
+}
+
+/* Additional Elements: Add subtle animations */
+/* Button Animations - Fade and Rotate */
+.home-section .btn, .about-section .btn {
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.home-section .btn:hover, .about-section .btn:hover {
+    background-color: #5c524a; /* Darker color for hover effect */
+    transform: scale(1.1) rotate(2deg); /* Add a slight rotation effect to buttons on hover */
+}
+
+/* Icon Rotation on Hover */
+.contact-icon {
+    transition: transform 0.3s ease-in-out;
+}
+
+.contact-icon:hover {
+    transform: rotate(10deg); /* Slight rotation for playful engagement */
+}
+
+/* Card Gradient and Subtle Hover Effect */
+.custom-card {
+    background: linear-gradient(135deg, #5c524a, #362e17); /* Gradient for cards */
+    color: #ffffff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.custom-card:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+}
+
+/* Full CSS File Integration */
+
 /* Add padding to offset the fixed navbar */
 section {
     padding-top: 100px;  /* Adjust this value to be slightly greater than the navbar height */
@@ -41,7 +111,6 @@ body {
     color: #F6F3EA;  /* Cream color on hover for links */
 }
 
-
 /* Navbar Link Styling */
 .nav-link {
     color: #FFFFFF;  /* White for links and brand text */
@@ -55,13 +124,12 @@ body {
 .home-section {
     position: relative;
     height: 100vh;
-    background-color: #FFFFFF
+    background-color: #FFFFFF;
     color: #362E17;  /* Color for text over the cover photo */
     display: flex;
     align-items: center;
     padding: 100px 0; /* Add padding to create space above and below the section */
 }
-
 
 /* Font Styling for Home Section */
 h1 {
@@ -75,8 +143,8 @@ h1 {
 p {
     font-family: 'Roboto', sans-serif; /* Use Roboto for paragraphs */
     font-weight: 400;
-    font-size: 1.2rem; /* Slightly larger than default for readability */
-    line-height: 1.6; /* Add line-height for better readability */
+    font-size: 1.4rem; /* Increased font size for readability */
+    line-height: 1.8; /* Add line-height for better readability */
     color: #362E17; /* Dark brown for text */
     margin-bottom: 40px; /* Space between paragraph and button */
 }
@@ -89,10 +157,11 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #FFFFFF
+    background-color: #FFFFFF;
     opacity: 0.5; /* Adjust opacity for translucency */
     z-index: -1; /* Send it behind the content */
 }
+
 /* Image Styling */
 .home-section .profile-img {
     max-width: 78%; /* Make sure the image doesn't exceed the column size */
@@ -202,7 +271,7 @@ p {
 
 .about-section p {
     font-family: 'Roboto', sans-serif; /* Use Roboto for paragraphs */
-    font-size: 1.1em;
+    font-size: 1.4rem; /* Increased paragraph text size */
     line-height: 1.8em;
     color: #FFFFFF; /* White text for paragraphs */
 }
@@ -258,7 +327,6 @@ p {
     transform: scale(1.05); /* Slight scale effect on hover */
 }
 
-
 /* Skills Section */
 .skills-section {
     background-color: #F6F3EA;
@@ -297,7 +365,6 @@ p {
     text-align: center;  /* Align the skills centrally under the icon */
 }
 
-
 /* Font Styling for Headings and Paragraphs in All Sections */
 .skills-section h1, h2, h5 {
     font-family: 'Playfair Display', serif; /* Use Playfair Display for headings */
@@ -310,7 +377,6 @@ p {
     font-weight: 400;
     color: #362E17; /* Dark brown for text */
 }
-
 
 /* Projects Section Styling */
 .projects-section {
@@ -352,7 +418,7 @@ p {
 }
 
 .custom-card:hover {
-    transform: translateY(-5px); /* Lift card slightly on hover */
+    transform: translateY(-10px); /* Lift effect on hover */
 }
 
 /* Card Title Styling */
@@ -390,7 +456,6 @@ p {
     color: #362E17; /* Mocha text for consistency */
 }
 
-
 /* Card Container Layout */
 .project-row {
     display: flex;
@@ -405,7 +470,6 @@ p {
     max-width: calc(33.333% - 20px); /* Ensure the column width matches the flex settings */
     box-sizing: border-box; /* Ensure padding and border are included in the width */
 }
-
 
 /* Timeline Section */
 .timeline-section {
@@ -544,8 +608,6 @@ p {
     line-height: 1.6; /* Improved line height for readability */
     color: #362E17; /* Dark brown color for text */
 }
-
-
 
 /* Divider Styling */
 .custom-divider {
