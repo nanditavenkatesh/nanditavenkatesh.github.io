@@ -133,35 +133,76 @@
 
     <!-- Projects Section -->
     <section id="projects" class="projects-section py-5" data-aos="fade-up" data-aos-offset="120">
-        <div class="container">
+        <div class="container projects-container">
             <h2 class="text-center mb-5">Projects</h2>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card">
-                        <img src="assets/images/project-1.jpg" class="card-img-top" alt="AI Coding Assistant">
+            <div class="row project-row">
+                <!-- BERT Fine-Tuning for Sentiment Classification -->
+                <div class="col-md-4 mb-4">
+                    <div class="card custom-card">
                         <div class="card-body">
-                            <h5 class="card-title">AI Coding Assistant</h5>
-                            <p class="card-text">An AI-powered coding assistant using the Flan-T5 model to assist with programming queries. <a href="https://github.com/nanditavenkatesh/AI-Coding-Assistant" target="_blank">GitHub Link</a></p>
+                            <h5 class="card-title">BERT Fine-Tuning for Sentiment Classification</h5>
+                            <p class="card-text">
+                                Fine-tuned DistilBERT for sentiment classification on a Twitter dataset of 5,000 tweets labeled positive, neutral, or negative.
+                                Achieved 75.6% accuracy, outperforming baseline models. Key steps included data preparation, model training, evaluation, and result visualization
+                            </p>
+                                <p class="card-text2">Key Technologies Used: Python 3.x, Transformers Library (Hugging Face), BERT, PyTorch, Scikit-learn, Matplotlib, Pandas, NumPy</p>
+                                <a href="https://github.com/nanditavenkatesh/Fine-Tuning-Bert-Classifier-for-Sentiment-Analysis" target="_blank" class="project-link">View Project</a>
+
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card">
-                        <img src="assets/images/project-2.png" class="card-img-top" alt="Fence GAN">
+                <!-- Fine-tuning FLAN-T5 for Python Question-Answering -->
+                <div class="col-md-4 mb-4">
+                    <div class="card custom-card">
                         <div class="card-body">
-                            <h5 class="card-title">Fence GAN</h5>
-                            <p class="card-text">A model to detect anomalies in aircraft telemetry data using GANs. <a href="https://github.com/nanditavenkatesh/Fence-GAN" target="_blank">GitHub Link</a></p>
+                            <h5 class="card-title">Fine-tuning FLAN-T5 for Python Question-Answering</h5>
+                            <p class="card-text">
+                                Fine-tuned the Flan-T5 base model on Python programming questions from StackOverflow to enhance its question-answering capabilities.
+								Achieved improved performance measured by ROUGE scores and human evaluation through data preprocessing, incremental training, and performance evaluation.
+                            </p>
+                                <p class="card-text2">Key Technologies Used: Python 3.x, Flan-T5 Base Model (Google's T5), Hugging Face Transformers Library, PyTorch, ROUGE Metrics, BeautifulSoup, Pandas, NumPy</p>
+                                <a href="https://github.com/nanditavenkatesh/Fine-Tuning-FLAN-T5-for-Python-Programming-Assistance" target="_blank" class="project-link">View Project</a>
+
                         </div>
                     </div>
                 </div>
-                <!-- Add more projects here -->
+                <!-- Baby Steps - Making Learing fun! -->
+                <div class="col-md-4 mb-4">
+                    <div class="card custom-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Baby Steps - Making Learing fun!</h5>
+                            <p class="card-text">
+                                Developed "Baby Steps," an interactive educational app that helps preschoolers learn to write alphabets and numbers through AI-based handwriting recognition, tutorials, and quizzes.
+								Features include practice sessions, video tutorials, and assessments. Built using Python, Flask, TensorFlow, and MySQL for an engaging learning experience.
+                            </p>
+                                <p class="card-text2">Key Technologies Used: Python 3.x, Flask, TensorFlow & Keras, Matplotlib & Seaborn, MySQL, Scikit-learn, NumPy</p>
+                                <a href="https://github.com/nanditavenkatesh/Baby-Steps" target="_blank" class="project-link">View Project</a>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- CSIC Machine Simulator -->
+                <div class="col-md-4 mb-4">
+                    <div class="card custom-card">
+                        <div class="card-body">
+                            <h5 class="card-title">CSIC Machine Simulator</h5>
+                            <p class="card-text">
+                                Developed a Java-based simulator of a conventional CISC architecture, featuring registers, memory, and a control unit with an interactive GUI to execute and visualize assembly instructions.
+								The simulator effectively mimics key components of a CISC machine, allowing users to perform arithmetic and logical operations, manage registers and memory, and execute a variety of assembly instructions.
+                            </p>
+                                <p class="card-text2">Key Technologies Used: Java, Object-Oriented Programming, Register and Memory Management, Assembly Language Simulation</p>
+                                <a href="https://github.com/nanditavenkatesh/CSIC-Machine-Simulator-in-Java" target="_blank" class="project-link">View Project</a>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
     <div class="section-divider-wrapper">
         <div class="custom-divider"></div>
     </div>
-
 
 
     <!-- Timeline Section -->
@@ -169,64 +210,53 @@
         <div class="container">
             <h2 class="text-center mb-5">My Journey</h2>
             <div class="timeline">
-
-                <!-- Timeline Item -->
+                <!-- AHU Technology Inc -->
                 <div class="timeline-item" data-aos="fade-up">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">July 2024 - Current</div>
                     <div class="timeline-content">
-                        <h4>Python Developer</h4>
+                        <h4 class="timeline-title">Python Developer</h4>
                         <p>AHU Technologies, Washington, D.C.</p>
                     </div>
                 </div>
 
-                <!-- Timeline Item -->
+                <!-- GWU -->
                 <div class="timeline-item" data-aos="fade-up">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-date">Aug 2022 - May 2024</div>
+                    <div class="timeline-date">August 2022 - May 2024</div>
                     <div class="timeline-content">
-                        <h4>Master of Science in Computer Science</h4>
-                        <p>George Washington University, School of Engineering & Applied Science, Washington, D.C.</p>
+                        <h4 class="timeline-title">The George Washington University</h4>
+                        <p>Master of Science - Computer Science, Washington, D.C.</p>
                     </div>
                 </div>
 
-                <!-- Timeline Item -->
+                <!-- GWU SEAS -->
                 <div class="timeline-item" data-aos="fade-up">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">June 2023 - May 2024</div>
                     <div class="timeline-content">
-                        <h4>Student Academic Assistant</h4>
-                        <p>George Washington University, Washington, D.C. - Assisted in Python and Software Engineering courses.</p>
+                        <h4 class="timeline-title">The George Washington University - School of Engineering and Applied Science</h4>
+                        <p>Student Academic Assistant - Computer Science Department, Washington, D.C.</p>
                     </div>
                 </div>
 
-                <!-- Timeline Item -->
+                <!-- Accenture -->
                 <div class="timeline-item" data-aos="fade-up">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-date">Dec 2021 - Aug 2022</div>
+                    <div class="timeline-date">August 2018 - August 2022</div>
                     <div class="timeline-content">
-                        <h4>Software Development Senior Analyst</h4>
-                        <p>Accenture, Bengaluru, Karnataka - Boosted team efficiency through reusable components, automated testing, and Agile methodology.</p>
+                        <h4 class="timeline-title">Accenture</h4>
+                        <p>Software Development Senior Analyst, Bangalore, India</p>
                     </div>
                 </div>
 
-                <!-- Timeline Item -->
+                <!-- DSCE -->
                 <div class="timeline-item" data-aos="fade-up">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-date">Aug 2018 - Dec 2021</div>
+                    <div class="timeline-date">August 2014 - June 2018</div>
                     <div class="timeline-content">
-                        <h4>Software Development Analyst</h4>
-                        <p>Accenture, Bengaluru, Karnataka - Focused on testing and improving software quality with extensive regression test scripts.</p>
-                    </div>
-                </div>
-
-                <!-- Timeline Item -->
-                <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Aug 2014 - June 2018</div>
-                    <div class="timeline-content">
-                        <h4>Bachelor of Engineering in Electronics and Instrumentation</h4>
-                        <p>Dayananda Sagar College of Engineering, VTU, Bengaluru, India.</p>
+                        <h4 class="timeline-title">Dayananda Sagar College of Engineering - Affiliated with VTU</h4>
+                        <p>Bachelor of Engineering - Electronics and Instrumentation, Bangalore, India</p>
                     </div>
                 </div>
 
@@ -236,7 +266,6 @@
     <div class="section-divider-wrapper">
         <div class="custom-divider"></div>
     </div>
-
 
 
     <!-- Contact Section -->

@@ -27,11 +27,20 @@ body {
     top: 0; /* When visible, the navbar slides into view */
 }
 
-/* Navbar Brand Styling */
-.navbar-brand {
-    font-weight: bold;
-    font-size: 24px;
+/* Navbar Styling */
+.navbar,
+.navbar-brand,
+.nav-link {
+    font-family: 'Roboto', sans-serif; /* Use Roboto for the navigation bar */
+    font-weight: 400; /* Normal weight for readability */
+    color: #FFFFFF; /* Maintain the existing color scheme for text */
 }
+
+/* Navbar Link Hover Effect */
+.nav-link:hover {
+    color: #F6F3EA;  /* Cream color on hover for links */
+}
+
 
 /* Navbar Link Styling */
 .nav-link {
@@ -303,152 +312,240 @@ p {
 }
 
 
-/* Projects Section */
+/* Projects Section Styling */
 .projects-section {
-    padding: 60px 0;
-    background-color: #F6F3EA;
+    padding: 80px 0; /* Increase padding for better spacing */
+    background-color: #F6F3EA; /* Cream background */
     color: #362E17;  /* Dark brown for text */
     scroll-margin-top: 100px;  /* Adjust this to the height of your navbar */
 }
 
+/* Container Styling for Projects */
+.projects-container {
+    max-width: 1200px; /* Restrict the max width to maintain alignment */
+    margin: 0 auto; /* Center the container horizontally */
+    overflow: hidden; /* Ensure no content overflows */
+    padding-left: 15px; /* Add padding to prevent overflow */
+    padding-right: 15px; /* Add padding to prevent overflow */
+}
+
+/* Projects Section Heading Styling */
 .projects-section h2 {
-    margin-bottom: 40px;
-    font-weight: bold;
+    margin-bottom: 50px;
+    font-family: 'Playfair Display', serif; /* Use Playfair Display for the section heading */
+    font-weight: 700; /* Bold weight to match other headings */
+    color: #362E17; /* Dark brown for heading text */
+    text-align: center; /* Center-align heading for visual balance */
 }
 
-.card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: none;
-    border-radius: 10px;
+/* Card Styling */
+.custom-card {
+    background-color: #5C524A; /* Dark muted brown/gray for card background */
+    color: #FFFFFF; /* White text for contrast */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border: none; /* No border for a clean look */
+    height: 100%; /* Ensure cards have consistent height */
+    padding: 25px; /* Add padding for better spacing */
+    transition: transform 0.3s ease; /* Smooth transition for card interaction */
+    overflow: hidden; /* Prevent overflow inside the card */
 }
 
-.card-img-top {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+.custom-card:hover {
+    transform: translateY(-5px); /* Lift card slightly on hover */
 }
 
-.card-body {
-    padding: 20px;
-}
-
+/* Card Title Styling */
 .card-title {
-    font-weight: bold;
+    font-family: 'Playfair Display', serif; /* Use Playfair Display for card titles */
+    font-weight: 700; /* Bold card titles */
     margin-bottom: 15px;
+    color: #FFFFFF; /* White text for card title */
+}
+
+/* Card Text Styling */
+.card-text {
+    font-family: 'Roboto', sans-serif; /* Use Roboto for card text */
+    font-size: 1em; /* Maintain readability */
+    line-height: 1.6; /* Improve line height for readability */
+    color: #FFFFFF; /* White text for consistency */
+}
+
+/* Link Styling for Project Links */
+.project-link {
+    color: #FFFFFF; /* White text for links for good contrast */
+    text-decoration: underline; /* Underline to indicate links */
+    transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+.project-link:hover {
+    color: #000000 !important; /* Force black color on hover */
+}
+
+/* Card Text Styling */
+.card-text2 {
+    font-family: 'Roboto', sans-serif; /* Use Roboto for card text */
+    font-size: 1em; /* Maintain readability */
+    line-height: 1.6; /* Improve line height for readability */
+    color: #362E17; /* Mocha text for consistency */
 }
 
 
-/* Contact Section Styling */
-.contact-section {
-    background-color: #CFCDC7;  /* Light tan background */
-    color: #362E17;  /* Dark brown for text */
-    padding: 60px 0;
-}
-
-.contact-section h2 {
-    font-weight: bold;
-    margin-bottom: 40px;
-}
-
-.contact-icons {
+/* Card Container Layout */
+.project-row {
     display: flex;
-    justify-content: center;
-    gap: 30px;  /* Adds space between each icon */
+    flex-wrap: wrap; /* Ensure cards are responsive */
+    gap: 20px; /* Space between each card */
+    justify-content: center; /* Center the cards in the container */
+    margin: 0; /* Remove any unwanted extra margin */
 }
 
-.contact-icon {
-    font-size: 2.5em;  /* Increases icon size */
-     color: #000000;  /* Black for icons */
-    transition: transform 0.3s, color 0.3s;
-}
-
-.contact-icon:hover {
-    color: #362E17;  /* Darkens the color on hover */
-    transform: scale(1.2);  /* Enlarges the icon slightly on hover */
+.col-md-4 {
+    flex: 1 1 calc(33.333% - 20px); /* Set each card to take up one-third of the row with consistent gaps */
+    max-width: calc(33.333% - 20px); /* Ensure the column width matches the flex settings */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
 }
 
 
 /* Timeline Section */
 .timeline-section {
-    background-color: #000000;  /* Black background */
+    background-color: #000000;  /* Black background for the section */
     color: #FFFFFF;  /* White text for readability */
-    padding: 60px 0;
+    padding: 80px 0;  /* Increase padding for better spacing */
 }
 
+/* Timeline Container */
 .timeline {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
 }
 
+/* Timeline Line Styling */
 .timeline::before {
     content: '';
     position: absolute;
-    width: 4px;
-    background-color: #F6F3EA;  /* Cream line for visibility */
+    width: 2px;  /* Make the timeline line thinner for a sleeker appearance */
+    background-color: #F6F3EA;  /* Cream color for visibility */
     top: 0;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
 }
 
+/* Timeline Item Styling */
 .timeline-item {
     position: relative;
-    margin: 20px 0;
-    padding-left: 30px;
-    padding-right: 30px;
+    margin: 40px 0; /* Increase margin to space out the timeline items */
     width: 50%;
+    padding: 0 30px;
 }
 
 .timeline-item:nth-child(odd) {
     left: 0;
-    text-align: left;
+    text-align: right;
 }
 
 .timeline-item:nth-child(even) {
     left: 50%;
-    text-align: right;
+    text-align: left;
 }
 
+/* Timeline Date Styling */
 .timeline-date {
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #F6F3EA;  /* Cream for timeline dates */
+    font-family: 'Roboto', sans-serif; /* Use Roboto for date text */
+    font-weight: 700; /* Bold font for emphasis */
+    margin-bottom: 15px; /* Increased margin for better spacing */
+    color: #F6F3EA;  /* Cream color for timeline dates */
 }
 
+/* Timeline Content Box Styling */
 .timeline-content {
     background-color: #CFCDC7;  /* Light tan for content blocks */
-    padding: 15px 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 25px 35px; /* Increase padding to provide a more spacious feel */
+    border-radius: 50px; /* Oval shape */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Increased shadow for depth */
+    display: inline-block;  /* Make the content inline-block for consistent alignment */
+    max-width: 90%;  /* Ensure the content doesn't overflow */
 }
 
-.timeline-dot {
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    background-color: #F6F3EA;  /* Cream color for dots */
-    border-radius: 50%;
-    top: 20px;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/* Timeline Title Styling */
+.timeline-title {
+    font-family: 'Playfair Display', serif; /* Use Playfair Display for the title */
+    font-weight: 700; /* Bold for emphasis */
+    font-size: 1.25em; /* Increase font size for better readability */
+    margin-bottom: 10px; /* Space below the title for readability */
+    color: #000000; /* Black color to contrast against the light tan background */
 }
 
+/* Timeline Paragraph Styling */
+.timeline-content p {
+    font-family: 'Roboto', sans-serif; /* Use Roboto for paragraph text */
+    font-size: 1em; /* Standard font size */
+    line-height: 1.6; /* Improve line height for readability */
+    color: #000000; /* Black text color for consistency */
+}
+
+/* Responsive Styling for Smaller Screens */
 @media (max-width: 768px) {
     .timeline-item {
         width: 100%;
         left: 0;
         padding-left: 50px;
         padding-right: 15px;
+        text-align: left; /* Ensure text is left-aligned for readability */
     }
 
     .timeline::before {
         left: 30px;
     }
-
-    .timeline-dot {
-        left: 30px;
-    }
 }
+
+/* Contact Section Styling */
+.contact-section {
+    background-color: #CFCDC7;  /* Light tan background */
+    color: #362E17;  /* Dark brown for text */
+    padding: 80px 0;  /* Increased padding for consistency with other sections */
+}
+
+/* Contact Heading Styling */
+.contact-section h2 {
+    font-family: 'Playfair Display', serif; /* Use Playfair Display for the heading */
+    font-weight: 700; /* Bold heading for emphasis */
+    font-size: 2em; /* Increased font size for prominence */
+    margin-bottom: 40px; /* Space below the heading for better separation */
+    color: #000000; /* Black color for the heading to stand out */
+}
+
+/* Contact Icons Container */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;  /* Increased space between icons for a balanced layout */
+}
+
+/* Individual Contact Icon Styling */
+.contact-icon {
+    font-size: 2.5em;  /* Larger icon size for better visibility */
+    color: #000000;  /* Black color for icons */
+    transition: transform 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+.contact-icon:hover {
+    color: #362E17;  /* Dark brown for icons on hover to add a subtle change */
+    transform: scale(1.2);  /* Slight enlargement for an interactive effect */
+}
+
+/* Ensure Padding and Font for Consistency in Text */
+.contact-section p {
+    font-family: 'Roboto', sans-serif; /* Use Roboto for paragraph text */
+    font-size: 1.1em; /* Standard font size for paragraphs */
+    line-height: 1.6; /* Improved line height for readability */
+    color: #362E17; /* Dark brown color for text */
+}
+
+
 
 /* Divider Styling */
 .custom-divider {
