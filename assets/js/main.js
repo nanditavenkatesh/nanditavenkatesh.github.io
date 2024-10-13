@@ -75,3 +75,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+window.onscroll = function() {
+    var scrollProgress = document.querySelector(".scroll-progress");
+    var windowScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    var windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrollPercent = (windowScroll / windowHeight) * 100;
+
+    scrollProgress.style.width = scrollPercent + "%";
+};

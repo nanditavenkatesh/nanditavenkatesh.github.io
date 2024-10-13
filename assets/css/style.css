@@ -3,11 +3,26 @@
 /* Enhance Colors: Add subtle gradients to break monotony */
 .home-section {
     background: linear-gradient(135deg, #ffffff, #f6f3ea); /* Subtle gradient for the home section */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    text-align: center; /* Ensure text is centered for smaller screens */
+    padding: 100px 20px; /* Add some padding to prevent overflow */
+    position: relative;
+    min-height: 100vh; /* Ensure full height for proper layout */
+    box-sizing: border-box; /* Include padding in height calculations */
 }
 
 .about-section {
     background: linear-gradient(135deg, #362e17, #5c524a); /* Darker gradient for a rich effect in the about section */
     color: #ffffff; /* Ensure text is readable against the gradient */
+    padding-top: 150px; /* Increase top padding to prevent overlapping */
+    padding-bottom: 100px; /* Add bottom padding for spacing */
+    min-height: 100vh; /* Ensure full height to avoid overlapping with previous section */
+    box-sizing: border-box; /* Include padding in height calculations */
+    position: relative;
+    z-index: 1; /* Ensure it stays above the home section content */
 }
 
 .timeline-section {
@@ -21,11 +36,8 @@
     border: none;
     color: #ffffff;
     transition: background 0.3s, transform 0.3s ease-in-out; /* Smooth transition for hover */
-}
-
-.home-section .btn:hover, .about-section .btn:hover {
-    background: linear-gradient(135deg, #5c524a, #362e17); /* Inverse gradient on hover */
-    transform: scale(1.05); /* Slight scaling effect for interactivity */
+    margin: 20px auto; /* Center the button and add spacing on smaller screens */
+    display: block; /* Ensure it remains centered */
 }
 
 /* Typography Adjustments */
@@ -551,17 +563,83 @@ p {
 }
 
 /* Responsive Styling for Smaller Screens */
+
+/* Responsive Styling for Project Cards */
 @media (max-width: 768px) {
+    .project-row {
+        display: flex;
+        flex-direction: column; /* Stack cards vertically */
+        gap: 20px; /* Space between each card */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .col-md-4 {
+        flex: 1 1 100%; /* Make each card take full width */
+        max-width: 90%; /* Ensure a good width on smaller devices */
+        box-sizing: border-box; /* Ensure padding and border are included in the width */
+        margin-bottom: 20px; /* Add some space at the bottom of each card */
+    }
+
+    .home-section {
+        padding: 100px 20px; /* Increase padding to prevent image overflow */
+        text-align: center;
+        align-items: center; /* Center items within the section */
+    }
+
+    .home-section .profile-img {
+        max-width: 90%; /* Limit image width on smaller screens to prevent overflow */
+        height: auto;
+        margin: 0 auto 20px; /* Add space below the image and center it */
+        display: block; /* Ensure the image is centered */
+    }
+
+    .home-section .btn {
+        margin-top: 20px; /* Ensure button is spaced properly below text and centered */
+        display: block; /* Make sure the button is a block element to center it */
+    }
+}
+
+/* Responsive Styling for Timeline Section */
+@media (max-width: 768px) {
+    .timeline {
+        flex-direction: column; /* Stack timeline items vertically */
+        max-width: 100%; /* Use the entire width */
+        padding: 0 20px; /* Add padding for better spacing */
+    }
+
     .timeline-item {
-        width: 100%;
-        left: 0;
-        padding-left: 50px;
-        padding-right: 15px;
-        text-align: left; /* Ensure text is left-aligned for readability */
+        width: 100%; /* Make each timeline item take full width */
+        text-align: center; /* Center-align the content within each item */
+        padding: 20px 0; /* Add padding for better spacing */
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        left: 0; /* Remove offset for mobile */
     }
 
     .timeline::before {
-        left: 30px;
+        display: none; /* Hide the central line on smaller screens */
+    }
+
+    .timeline-content {
+        max-width: 100%; /* Use full width on small devices */
+        margin: 0 auto 20px; /* Center each content box */
+    }
+}
+
+@media (max-width: 576px) {
+    .project-row {
+        overflow-x: hidden;
+    }
+
+    .custom-card {
+        max-width: 95%; /* Take up almost the entire width on very small screens */
+    }
+
+    .about-section {
+        padding-top: 200px; /* Increase top padding to avoid image overlap */
     }
 }
 
@@ -615,4 +693,15 @@ p {
     background-color: #000000; /* Black color for divider */
     width: 100%; /* Full width */
     margin: 0;   /* Remove margin to ensure no additional spacing */
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background-color: #362e17; /* Dark brown to match theme */
+    z-index: 9999;
 }
