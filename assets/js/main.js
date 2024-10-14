@@ -78,3 +78,14 @@ window.onscroll = function() {
 
     scrollProgress.style.width = scrollPercent + "%";
 };
+
+// Load the image dynamically using JavaScript
+window.onload = function() {
+    const wrapper = document.getElementById('profile-img-wrapper');
+    const img = document.createElement('img');
+    img.src = 'assets/images/person.jpg';
+    img.alt = 'Profile Image';
+    img.className = 'profile-img shadow-img';
+    wrapper.appendChild(img);
+};
+
