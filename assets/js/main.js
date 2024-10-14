@@ -40,19 +40,12 @@ window.addEventListener('scroll', () => {
     });
 });
 
-//
-//document.addEventListener('scroll', function() {
-//    const navbar = document.querySelector('.navbar');
-//    const scrollPosition = window.scrollY;
-//
-//    if (scrollPosition > 100) {
-//        // If scrolled away from top, show the navbar
-//        navbar.classList.add('navbar-visible');
-//    } else {
-//        // If at the top, hide the navbar
-//        navbar.classList.remove('navbar-visible');
-//    }
-//});
+// Disable right-click on all images
+document.addEventListener('contextmenu', function(event) {
+    if (event.target.tagName === 'IMG') {
+        event.preventDefault();
+    }
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');

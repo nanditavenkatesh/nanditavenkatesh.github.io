@@ -1,4 +1,33 @@
-/* Suggested Visual Improvements */
+/* Prevent dragging of images */
+img {
+    -webkit-user-drag: none;  /* Safari */
+    -khtml-user-drag: none;    /* Konqueror HTML */
+    -moz-user-drag: none;      /* Firefox */
+    -o-user-drag: none;        /* Opera */
+    user-drag: none;           /* Standard */
+}
+
+/* Wrapper for image with overlay to prevent selection */
+.image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.image-wrapper img {
+    display: block;
+    width: 100%;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0);  /* Fully transparent overlay */
+    cursor: not-allowed;  /* Cursor indicating the action is not allowed */
+}
+
 
 /* Enhance Colors: Add subtle gradients to break monotony */
 .home-section {
@@ -58,7 +87,6 @@ p {
     color: #362e17; /* Keep dark brown color for consistency */
 }
 
-/* Additional Elements: Add subtle animations */
 /* Button Animations - Fade and Rotate */
 .home-section .btn, .about-section .btn {
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -94,8 +122,6 @@ p {
 .custom-card:hover {
     transform: translateY(-10px); /* Lift effect on hover */
 }
-
-/* Full CSS File Integration */
 
 /* Add padding to offset the fixed navbar */
 section {
