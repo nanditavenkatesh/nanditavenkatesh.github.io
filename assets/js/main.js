@@ -40,28 +40,6 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Disable right-click on all images
-document.addEventListener('contextmenu', function(event) {
-    if (event.target.tagName === 'IMG') {
-        event.preventDefault();
-    }
-});
-
-// Disable drag-and-drop on all images
-document.querySelectorAll('img').forEach(img => {
-    img.addEventListener('dragstart', function(event) {
-        event.preventDefault();
-    });
-});
-
-// Disable long press to save on touch devices
-document.querySelectorAll('img').forEach(img => {
-    img.addEventListener('touchstart', function(event) {
-        if (event.touches.length > 1) {
-            event.preventDefault();
-        }
-    });
-});
 
 document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
@@ -94,6 +72,58 @@ window.onscroll = function() {
 
     scrollProgress.style.width = scrollPercent + "%";
 };
+
+// Disable right-click on all images
+document.addEventListener('contextmenu', function(event) {
+    if (event.target.tagName === 'IMG') {
+        event.preventDefault();
+    }
+});
+
+// Disable drag-and-drop on all images
+document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('dragstart', function(event) {
+        event.preventDefault();
+    });
+});
+
+// Disable long press to save on touch devices
+document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('touchstart', function(event) {
+        if (event.touches.length > 1) {
+            event.preventDefault();
+        }
+    });
+});
+
+
+// Prevent long press to save on touch devices
+document.querySelectorAll('img').forEach(img => {
+    let touchDuration;
+
+    // Listen for touchstart and initiate a timer
+    img.addEventListener('touchstart', function(event) {
+        touchDuration = setTimeout(function() {
+            event.preventDefault(); // If touch lasts long enough, prevent default action
+        }, 500); // Trigger preventDefault if touch lasts longer than 500ms
+    });
+
+    // Clear the timer on touchend to prevent triggering
+    img.addEventListener('touchend', function(event) {
+        clearTimeout(touchDuration);
+    });
+
+    // Clear the timer on touchmove as we assume it's not a long press anymore
+    img.addEventListener('touchmove', function(event) {
+        clearTimeout(touchDuration);
+    });
+
+    // Prevent gesture events on images
+    img.addEventListener('gesturestart', function(event) {
+        event.preventDefault();
+    });
+});
+
 
 // Load the image dynamically using JavaScript
 window.onload = function() {
