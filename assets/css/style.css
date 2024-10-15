@@ -5,6 +5,8 @@ img {
     -moz-user-drag: none;      /* Firefox */
     -o-user-drag: none;        /* Opera */
     user-drag: none;           /* Standard */
+    user-select: none; /* Prevent selection on all devices */
+    -webkit-touch-callout: none; /* Prevent context menu on long press (Safari) */
 }
 
 /* Wrapper for image with overlay to prevent selection */
@@ -28,6 +30,7 @@ img {
     cursor: not-allowed;  /* Cursor indicating the action is not allowed */
     z-index: 5;
     pointer-events: none; /* Allow click events to pass through to other elements like buttons */
+    touch-action: none; /* Disable touch interactions to further block long press or gestures */
 }
 
 /* Disable right-click on the image itself */
