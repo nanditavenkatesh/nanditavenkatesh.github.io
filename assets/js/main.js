@@ -47,6 +47,22 @@ document.addEventListener('contextmenu', function(event) {
     }
 });
 
+// Disable drag-and-drop on all images
+document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('dragstart', function(event) {
+        event.preventDefault();
+    });
+});
+
+// Disable long press to save on touch devices
+document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('touchstart', function(event) {
+        if (event.touches.length > 1) {
+            event.preventDefault();
+        }
+    });
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
 

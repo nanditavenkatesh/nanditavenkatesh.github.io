@@ -35,6 +35,24 @@ img {
     pointer-events: all;
 }
 
+/*for mobile media*/
+@media (max-width: 768px) {
+    .image-overlay-wrapper {
+        width: 100%;
+    }
+
+    .image-overlay {
+        width: 100%;
+        height: 100%;
+        pointer-events: none; /*To make sure overlay doesn't interfere */
+    }
+
+    /* Ensure buttons remain clickable on smaller devices */
+    .btn, .contact-icon {
+        pointer-events: all;  /* Override to make sure buttons/icons are always clickable */
+    }
+}
+
 
 
 /* Enhance Colors: Add subtle gradients to break monotony */
